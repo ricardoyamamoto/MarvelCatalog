@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ca.uot.scs2682.marvelcatalog.ui.comics.ComicBookView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/comicBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkRed"
+        android:textColor="@color/white"
+        android:layout_marginTop="4dp"
+        android:textSize="18sp"/>
+    <ScrollView
+        android:id="@+id/comicBookScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/comicBookInfo"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/comicBookImage"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp" />
+                <TextView
+                    android:id="@+id/lblComicBookDescription"
+                    android:text="@string/description"
+                    android:layout_toEndOf="@id/comicBookImage"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/comicBookDescription"
+                    android:layout_below="@id/lblComicBookDescription"
+                    android:layout_toEndOf="@id/comicBookImage"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/lblReleaseDate"
+                    android:text="@string/release_date"
+                    android:layout_below="@id/comicBookImage"
+                    android:textStyle="bold"
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/comicBookReleaseDate"
+                    android:layout_below="@id/comicBookImage"
+                    android:layout_toEndOf="@id/lblReleaseDate"
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/lblIssueNumber"
+                    android:text="@string/issue_number"
+                    android:layout_below="@id/lblReleaseDate"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/issueNumber"
+                    android:layout_below="@id/comicBookReleaseDate"
+                    android:layout_toEndOf="@id/lblIssueNumber"
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/lblPageCount"
+                    android:text="@string/page_count"
+                    android:layout_below="@id/lblIssueNumber"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/pageCount"
+                    android:layout_toEndOf="@id/lblPageCount"
+                    android:layout_margin="2dp"
+                    android:layout_below="@id/issueNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/lblPrice"
+                    android:text="@string/price"
+                    android:layout_below="@id/lblPageCount"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_below="@id/pageCount"
+                    android:layout_toEndOf="@id/lblPrice"
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/lblMoreInfo"
+                    android:text="@string/more_info"
+                    android:textStyle="bold"
+                    android:layout_below="@id/price"
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/moreInfo"
+                    android:text="@string/click_here"
+                    android:background="@color/red"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/price"
+                    android:layout_toEndOf="@id/lblMoreInfo"
+                    android:layout_margin="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/lblCreators"
+                android:text="@string/creators"
+                android:layout_below="@id/comicBookInfo"
+                android:textColor="@color/white"
+                android:background="@color/darkRed"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/noCreatorsFound"
+                android:text="@string/no_creators_found"
+                android:layout_below="@id/lblCreators"
+                android:visibility="invisible"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/creatorsList"
+                android:layout_below="@id/noCreatorsFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:id="@+id/lblCharacters"
+                android:text="@string/characters"
+                android:layout_below="@id/creatorsList"
+                android:background="@color/darkRed"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/noCharactersFound"
+                android:text="@string/no_characters_found"
+                android:layout_below="@id/lblCharacters"
+                android:visibility="invisible"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/charactersList"
+                android:layout_below="@id/noCharactersFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+    </ScrollView>
+</ca.uot.scs2682.marvelcatalog.ui.comics.ComicBookView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ca.uot.scs2682.marvelcatalog.ui.characters.CharactersList
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/charactersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</ca.uot.scs2682.marvelcatalog.ui.characters.CharactersList>
